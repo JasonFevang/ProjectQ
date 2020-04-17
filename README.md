@@ -43,9 +43,32 @@ Source code
     Handles user input
   display.js
     Handles drawing to the html canvas element
-  engine.js
-    Handles how framerate of the drawing to the canvas
   game.js
     Handles all game logic
   main.js
-    Handles starting the engine and all setup
+    Handles starting the gameloop and all setup
+
+
+
+class Player
+  Location
+  State
+  alive
+  ...
+  draw(ctx)
+
+In the gameloop when drawing, need to draw all the elements to the page
+The player's location and parameters will be modified in the game logic
+The player's draw function will be called 
+
+
+color changing: Game.update()
+calling the ctx.drawRect() with the color: Display.render()
+Controller does nothing, there's no user input
+
+All this is tied together in the gameloop in main.js
+
+Who tells the display class what the color is? How do they tell it? Where is that stored?
+  The main.js tells the display what the color is. Tells it using Display.render(color)
+  The color isn't stored anywhere other than in Game, it is immediately drawn in Display.render(color)
+
